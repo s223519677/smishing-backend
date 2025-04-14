@@ -1,10 +1,10 @@
-const mongoose = require('mongoose')
+import mongoose from "mongoose";
 
 const otpSchema = new mongoose.Schema(
     {
         userId: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
+            ref: "User",
             required: true,
         },
         otpHash: {
@@ -25,7 +25,8 @@ const otpSchema = new mongoose.Schema(
             default: false,
         },
     },
-    { timestamps: true }
-)
+    { timestamps: true },
+);
 
-module.exports = mongoose.model('Otp', otpSchema)
+const Otp = mongoose.model("Otp", otpSchema);
+export default Otp;
