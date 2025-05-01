@@ -3,6 +3,7 @@ const express = require('express')
 const connectDB = require('./configs/db.config.js')
 const authRoute = require('./routes/auth.route.js')
 const spamRoute = require('./routes/spam.route.js')
+const contactRoute = require('./routes/contact.route.js')
 
 // calling body-parser to handle the Request Object from POST requests
 var bodyParser = require('body-parser')
@@ -19,6 +20,9 @@ app.use('/api/auth', authRoute)
 
 // Mount spam routes at /api/spam
 app.use('/api/spam', spamRoute)
+
+// Mount contact routes at /api/contact
+app.use('/api/contact', contactRoute)
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
