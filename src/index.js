@@ -12,17 +12,17 @@ app.use(express.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // Connect to MongoDB
-connectDB()
+connectDB();
 
 // Mount auth routes at /api/auth
-app.use('/api/auth', authRoute)
+app.use("/api/auth", authRoute);
 
 // Mount spam routes at /api/spam
 app.use('/api/spam', spamRoute)
 
 const PORT = process.env.PORT || 3000
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`)
-})
+    console.log(`Server running on port ${PORT}`);
+});
 
-module.exports = app
+export default app;
