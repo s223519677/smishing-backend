@@ -1,15 +1,11 @@
-require("dotenv").config();
-const express = require("express");
-const connectDB = require("./configs/db.config.js");
-const authRoute = require("./routes/auth.route.js");
-const contactRoute = require("./routes/contact.route.js");
-
-// calling body-parser to handle the Request Object from POST requests
-var bodyParser = require("body-parser");
+import "dotenv/config";
+import express from "express";
+import connectDB from "./configs/db.config.js";
+import authRoute from "./routes/auth.route.js";
+import contactRoute from "./routes/contact.route.js";
 
 const app = express();
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
 // Connect to MongoDB
 connectDB();

@@ -1,11 +1,10 @@
-const mongoose = require('mongoose')
+import mongoose from "mongoose";
 
-// Contact Schema
 const contactSchema = new mongoose.Schema(
     {
         user: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'User',
+            ref: "User",
             required: true,
         },
         name: {
@@ -21,8 +20,15 @@ const contactSchema = new mongoose.Schema(
             required: false,
             lowercase: true,
         },
+        relationship: {
+            type: String,
+            required: true,
+            enum: ["Family", "Friend", "Colleague", "Other"],
+            default: "Other",
+        },
     },
-    { timestamps: true }
-)
+    { timestamps: true },
+);
 
-module.exports = mongoose.model('Contact', contactSchema)
+const Contact = mongoose.model("Contact", contactSchema);
+export default Contact;
