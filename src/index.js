@@ -8,7 +8,7 @@ import securityMiddleware from "./middlewares/security.middleware.js";
 import { apiLimiter, authLimiter } from "./middlewares/rateLimiter.middleware.js";
 
 // calling body-parser to handle the Request Object from POST requests
-import bodyParserfrom "body-parser";
+import bodyParser from "body-parser";
 
 const app = express();
 
