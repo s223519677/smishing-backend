@@ -1,8 +1,9 @@
-const express = require('express')
-const router = express.Router()
-const spamController = require('../controllers/spam.controller')
+import express from 'express'
+import spamController from '../controllers/spam.controller.js';
+
+const router = express.Router();
 
 // POST /textChecker
 router.post('/textChecker', spamController.checkSpamMessage)
 
-module.exports = router
+export default router;
