@@ -1,7 +1,7 @@
 /**
  * POST /api/textChecker
  */
-exports.checkSpamMessage = async (req, res) => {
+const checkSpamMessage = async (req, res) => {
     try {
         const { message } = req.body
 
@@ -128,3 +128,7 @@ const checkSuspiciousMessage = (message) => {
                 : 'No suspicious patterns found.',
     }
 }
+
+export default {
+    checkSpamMessage
+};
